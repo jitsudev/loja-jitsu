@@ -11,8 +11,8 @@ export default function Home() {
         <main className="mb-auto flex w-full">
           <Menu />
           <div className="flex flex-row gap-3 flex-wrap w-5/6 p-10">
-            {[...Array(10)].map(() => (
-              <Produto />
+            {[...Array(10)].map((e, i) => (
+              <Produto key={i} />
             ))}
           </div>
         </main>
