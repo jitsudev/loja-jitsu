@@ -3,9 +3,14 @@ import Link from "next/link";
 
 export default function Menu() {
   return (
-    <nav className="flex flex-col p-10 w-1/6">
-      <span className="text-xs border-solid border-b-[1px]">Vestuário</span>
-      <Link href="/camisas" className="text-gray-300 hover:text-gray-200">
+    <nav className="flex flex-col p-10 w-1/6 ">
+      <span className="text-xs border-solid border-b-[1px] pb-1 border-slate-700">
+        Vestuário
+      </span>
+      <Link
+        href="/loja?filtro=camisas"
+        className="text-gray-300 hover:text-gray-200"
+      >
         Camisas
       </Link>
       <Link href="/regatas" className="text-gray-300 hover:text-gray-200">
@@ -18,7 +23,7 @@ export default function Menu() {
         BabyLook
       </Link>
 
-      <span className="text-xs border-solid border-b-[1px] mt-10">
+      <span className="text-xs border-solid border-b-[1px] mt-10 pb-1 border-slate-700">
         Acessórios
       </span>
       <Link href="/bones" className="text-gray-300 hover:text-gray-200">
@@ -26,6 +31,19 @@ export default function Menu() {
       </Link>
       <Link href="/canecas" className="text-gray-300 hover:text-gray-200">
         Canecas
+      </Link>
+
+      <span className="text-xs border-solid border-b-[1px] mt-10 pb-1 border-slate-700">
+        Mais
+      </span>
+      <Link href="/sobre" className="text-gray-300 hover:text-gray-200">
+        Sobre
+      </Link>
+      <Link href="/blog" className="text-gray-300 hover:text-gray-200">
+        Blog
+      </Link>
+      <Link href="/parceiros" className="text-gray-300 hover:text-gray-200">
+        Parceiros
       </Link>
     </nav>
   );

@@ -70,7 +70,8 @@ export default function Footer({ className }: any) {
         </div>
       </div>
       <div className="flex items-center justify-center text-xs text-gray-700 p-3">
-        Desenvolvido por Big Design - Todos os direitos reservados - 2024
+        2024 - Todos os direitos reservados - Desenvolvido por
+        <Link href="">Jitsu Devs</Link>.
       </div>
     </footer>
   );
