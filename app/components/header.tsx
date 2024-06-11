@@ -6,9 +6,9 @@ export default function Header({ className }: any) {
     <header className={className}>
       <Link href="/">
         <Image
-          src="/favicon.png"
-          width={50}
-          height={50}
+          src="/logo-header.png"
+          width={180}
+          height={72}
           alt="Logotipo da JITSU - Marca registrada"
         ></Image>
       </Link>
