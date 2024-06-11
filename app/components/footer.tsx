@@ -24,7 +24,7 @@ export default function Footer({ className }: any) {
           <Link href="/rastreio" className="text-gray-300 hover:text-gray-200">
             Rastrear Pedido
           </Link>
-          <Link href="/denucia" className="text-gray-300 hover:text-gray-200">
+          <Link href="/denuncia" className="text-gray-300 hover:text-gray-200">
             Uso ilegal de marcas
           </Link>
         </nav>

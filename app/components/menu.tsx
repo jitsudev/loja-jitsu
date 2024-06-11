@@ -5,7 +5,7 @@ export default function Menu() {
   return (
     <nav className="flex flex-col p-10 w-1/6">
       <span className="text-xs border-solid border-b-[1px]">Vestuário</span>
-      <Link href="/tshirts" className="text-gray-300 hover:text-gray-200">
+      <Link href="/camisas" className="text-gray-300 hover:text-gray-200">
         Camisas
       </Link>
       <Link href="/regatas" className="text-gray-300 hover:text-gray-200">
