@@ -1,7 +1,7 @@
 import Produto from "@/app/components/produto";
 import Image from "next/image";
 
-export default function Page() {
+export default function Page({ params }: { params: { produto: string } }) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex gap-4 w-full">
@@ -124,7 +124,7 @@ export default function Page() {
         <h2>Produtos semelhantes</h2>
         <div className="flex gap-4">
           {[...Array(6)].map((e, i) => (
-            <Produto key={i} />
+            <Produto key={i} tipo={params.produto} slug="camisa-estampada" />
           ))}
         </div>
       </div>
