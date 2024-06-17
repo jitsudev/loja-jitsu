@@ -1,12 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Produto({ slug }: any) {
+export default function Produto({
+  tipo,
+  slug,
+}: {
+  tipo: string;
+  slug: string;
+}) {
   return (
     <div className="flex flex-col w-1/6 items-center justify-center">
       <Link
         href={{
-          pathname: "loja/" + slug,
+          pathname: `${tipo}/${slug}`,
           query: {},
         }}
       >

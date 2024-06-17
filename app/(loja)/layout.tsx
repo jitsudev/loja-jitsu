@@ -1,10 +1,10 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "./components/header";
-import Menu from "./components/menu";
-import Footer from "./components/footer";
+import "../globals.css";
+import Header from "../components/header";
+import Menu from "../components/menu";
+import Footer from "../components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 

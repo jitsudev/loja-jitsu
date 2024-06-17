@@ -30,6 +30,12 @@ export default function Footer({ className }: any) {
         </nav>
 
         <div className="flex flex-row gap-10">
+          <Link
+            href="/blog"
+            className="mb-2 inline-block rounded bg-slate-700 px-4 py-2.5 text-xs font-medium uppercase leading-normal text-black hover:bg-slate-600"
+          >
+            Blog
+          </Link>
           <Link href="https://www.facebook.com/vistajitsu">
             <button
               type="button"

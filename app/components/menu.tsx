@@ -7,10 +7,7 @@ export default function Menu() {
       <span className="text-xs border-solid border-b-[1px] pb-1 border-slate-700">
         Vestuário
       </span>
-      <Link
-        href="/loja?filtro=camisas"
-        className="text-gray-300 hover:text-gray-200"
-      >
+      <Link href="/camisas" className="text-gray-300 hover:text-gray-200">
         Camisas
       </Link>
       <Link href="/regatas" className="text-gray-300 hover:text-gray-200">
@@ -37,10 +34,7 @@ export default function Menu() {
         Mais
       </span>
       <Link href="/sobre" className="text-gray-300 hover:text-gray-200">
-        Sobre
-      </Link>
-      <Link href="/blog" className="text-gray-300 hover:text-gray-200">
-        Blog
+        Sobre a Jitsu
       </Link>
       <Link href="/parceiros" className="text-gray-300 hover:text-gray-200">
         Parceiros
