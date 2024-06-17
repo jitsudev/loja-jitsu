@@ -1,10 +1,9 @@
-import Produto from "@/app/components/produto";
-import Image from "next/image";
-
+import Frete from "../../components/frete";
 export default function Page() {
   return (
     <>
       <h1>Carrinho</h1>
+      <Frete />
     </>
   );
 }

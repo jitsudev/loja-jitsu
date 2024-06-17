@@ -1,3 +1,4 @@
+import Frete from "@/app/components/frete";
 import Produto from "@/app/components/produto";
 import Image from "next/image";
 
@@ -116,6 +117,10 @@ export default function Page({ params }: { params: { produto: string } }) {
             <button className="text-lg text-black p-2 flex items-center justify-center w-1/3 rounded-full bg-green-400 hover:bg-green-300">
               Comprar
             </button>
+          </div>
+
+          <div>
+            <Frete />
           </div>
         </div>
       </div>
