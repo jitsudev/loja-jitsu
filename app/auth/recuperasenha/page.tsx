@@ -28,6 +28,15 @@ export default function Page() {
           </button>
         </form>
       </div>
+      <div className="flex flex-col justify-center items-center gap-4">
+        <h2>Lembrou a senha ?</h2>
+        <Link
+          href="/auth/login"
+          className="flex justify-center items-center w-full p-2 bg-blue-800 rounded-full"
+        >
+          Login
+        </Link>
+      </div>
     </div>
   );
 }
