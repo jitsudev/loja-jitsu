@@ -6,7 +6,7 @@ export default function Header({ className }: any) {
     <header className={className}>
       <Link href="/">
         <Image
-          src="/logo-header.png"
+          src="/logo_header.png"
           width={180}
           height={72}
           alt="Logotipo da JITSU - Marca registrada"
@@ -21,8 +21,8 @@ export default function Header({ className }: any) {
         <button type="submit">Buscar</button>
       </div>
       <nav className="flex gap-5">
-        <Link href="/login">Login</Link>
-        <Link href="/cart">Cart</Link>
+        <Link href="/auth/login">Login</Link>
+        <Link href="/loja/carrinho">Cart</Link>
       </nav>
     </header>
   );
