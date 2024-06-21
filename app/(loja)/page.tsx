@@ -1,12 +1,13 @@
 import Produto from "../components/produto";
+import { PrismaClient, Link } from "@prisma/client";
 
 export default function Page() {
-  return (
-    <>
-      <h1>Página inicial com destaques e lançamentos...</h1>
-      {[...Array(10)].map((e, i) => (
-        <Produto key={i} tipo="camisa" slug="camisa-estampada" />
-      ))}
-    </>
-  );
+	return (
+		<>
+			<h1>Página inicial com destaques e lançamentos...</h1>
+			{[...Array(10)].map((e, i) => (
+				<Produto key={i} tipo="camisa" slug="camisa-estampada" />
+			))}
+		</>
+	);
 }
