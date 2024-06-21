@@ -5,11 +5,13 @@
 :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-rgb: 255, 255, 255;
+	--input-border: black;
 }
 
 .dark {
 	--foreground-rgb: 255, 255, 255;
 	--background-rgb: 0, 0, 0;
+	--input-border: white;
 }
 
 body {
@@ -21,4 +23,20 @@ body {
 	.text-balance {
 		text-wrap: balance;
 	}
+}
+
+.cor input[type="radio"] {
+	appearance: none;
+	width: 1em;
+	height: 1em;
+	border: 1px solid var(--input-border);
+}
+
+.cor input[type="radio"]:checked {
+	border: none;
+	outline: 3px solid red;
+}
+
+input[type="radio"]:checked {
+	accent-color: red;
 }
