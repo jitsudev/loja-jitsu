@@ -5,13 +5,13 @@
 :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-rgb: 255, 255, 255;
-	--input-border: black;
+	--input-border: 100, 100, 100;
 }
 
 .dark {
 	--foreground-rgb: 255, 255, 255;
 	--background-rgb: 0, 0, 0;
-	--input-border: white;
+	--input-border: 200, 200, 200;
 }
 
 body {
@@ -25,14 +25,14 @@ body {
 	}
 }
 
-.cor input[type="radio"] {
+.cor[type="radio"] {
 	appearance: none;
-	width: 1em;
-	height: 1em;
-	border: 1px solid var(--input-border);
+	width: 1.1em;
+	height: 1.1em;
+	border: 2px solid rgb(var(--input-border));
 }
 
-.cor input[type="radio"]:checked {
+.cor[type="radio"]:checked {
 	border: none;
 	outline: 3px solid red;
 }

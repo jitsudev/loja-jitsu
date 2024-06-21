@@ -7,13 +7,11 @@ export default function Colors() {
 
 	return (
 		<div className="flex gap-2 items-center">
-			<div>Cor:</div>
-			{Object.keys(COLOR).map((k: string, i: number) => (
-				<div key={i} className="cor flex flex-col gap-1">
-					<input type="radio" name="color" className={COLOR[k]} onClick={() => setColor(k)} />
-				</div>
+			<div>Cor: </div>
+			{Object.keys(COLOR).map((k, i) => (
+				<input type="radio" key={i} name="color" className={`cor ${COLOR[k]} rounded`} onClick={() => setColor(k)} />
 			))}
-			<div>{color.replace("_", " ")}</div>
+			<div>{color} </div>
 		</div>
 	);
 }
