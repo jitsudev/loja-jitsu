@@ -1,5 +1,4 @@
 import Produto from "../components/produto";
-import { PrismaClient, Link } from "@prisma/client";
 
 export default function Page() {
 	return (
