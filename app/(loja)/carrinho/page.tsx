@@ -13,8 +13,8 @@ export default function Page() {
 				<h1>Meus ítems</h1>
 				{items?.length > 0 ? (
 					<div className="flex flex-col gap-4">
-						{items.map((item: Item) => (
-							<div className="flex justify-between items-center gap-3 bg-gray-900">
+						{items.map((item: Item, i: number) => (
+							<div key={i} className="flex justify-between items-center gap-3 bg-gray-900">
 								<Image src="/mockup.png" width={80} height={80} alt={item.title} className="rounded" />
 								<div>{item.title}</div>
 								<Quantity />
