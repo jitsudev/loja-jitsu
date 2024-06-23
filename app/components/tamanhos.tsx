@@ -1,5 +1,5 @@
 "use client";
-import { SetStateAction, useState, Dispatch } from "react";
+import { useProduct } from "../context/productContext";
 import { SIZE } from "../(util)/dimona";
 
 type sizeType = {
@@ -9,26 +9,23 @@ type sizeType = {
 };
 
 export default function Tamanho() {
-	const [selectedSize, setSize]: [sizeType, Dispatch<sizeType>] = useState({} as sizeType);
+	const { item, handleProduto } = useProduct();
+
+	function setSize(size: string) {
+		handleProduto({ ...item, size });
+	}
+
 	return (
 		<div className="flex flex-col gap-2">
 			<div className="flex gap-2">
 				Tamanho:
 				{Object.keys(SIZE).map((v, i) => (
 					<div key={i} className="flex gap-1">
-						<input type="radio" name="color" value={v} onClick={() => setSize(SIZE[v] as sizeType)} />
+						<input type="radio" name="size" value={v} onClick={() => setSize(v)} />
 						{v}
 					</div>
 				))}
 			</div>
-
-			{selectedSize.a ? (
-				<div className="flex gap-3">
-					<span>Largura: {selectedSize.a}cm</span>
-					<span>Comprimento:{selectedSize.b}cm</span>
-					<span>Gola: {selectedSize.c}cm</span>
-				</div>
-			) : null}
 		</div>
 	);
 }

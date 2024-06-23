@@ -1,4 +1,4 @@
-import Produto from "../components/produto";
+import Produto from "../components/cardproduto";
 
 export default function Page() {
 	return (

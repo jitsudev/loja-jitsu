@@ -21,14 +21,23 @@ model Address {
   country     String
 }
 
-model Item {
+model Design {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  color     String
+  stamp_url String
+  mock_url  String
+  produto   Produto @relation(fields: [produtoId], references: [id])
+  produtoId String @unique @db.ObjectId
+}
+
+model Produto {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt   DateTime
-  modifiedAt  DateTime
-  active      Boolean
   title       String
   price       String
   discount    String
   description String
+  base_sku    String
+  category    String
   slug        String
+  design      Design[]
 }

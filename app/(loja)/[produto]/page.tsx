@@ -1,13 +1,19 @@
 import Filtros from "../../components/filtros";
-import Produto from "../../components/produto";
+import CardProduto from "../../components/cardproduto";
 
-export default function Page({ params }: { params: { produto: string } }) {
-  return (
-    <>
-      <Filtros />
-      {[...Array(10)].map((e, i) => (
-        <Produto key={i} tipo={params.produto} slug="camisa-estampada" />
-      ))}
-    </>
-  );
+import { PrismaClient, Produto } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+export default async function Page({ params }: { params: { produto: string } }) {
+	const produtos = await prisma.produto.findMany();
+	console.log(produtos);
+	return (
+		<>
+			<Filtros />
+			{produtos?.map((e, i) => (
+				<CardProduto key={i} title={e.title} tipo={params.produto} slug={e.slug} price={e.price} />
+			))}
+		</>
+	);
 }

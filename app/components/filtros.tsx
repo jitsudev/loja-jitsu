@@ -1,4 +1,5 @@
 import Colors from "./colors";
+import Ordenador from "./ordernador";
 
 export default function Filtros() {
 	return (
@@ -10,14 +11,7 @@ export default function Filtros() {
 
 			<Colors />
 
-			<div>
-				Ordenar por:
-				<select>
-					<option>Menor preço</option>
-					<option>Maior preço</option>
-					<option>Lançamento</option>
-				</select>
-			</div>
+			<Ordenador title="Ordenar por:" />
 			<div>Disposição</div>
 		</div>
 	);
