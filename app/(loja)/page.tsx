@@ -1,11 +1,11 @@
-import Produto from "../components/cardproduto";
+import CardProduto from "../components/cardproduto";
 
 export default function Page() {
 	return (
 		<>
 			<h1>Página inicial com destaques e lançamentos...</h1>
 			{[...Array(10)].map((e, i) => (
-				<Produto key={i} tipo="camisa" slug="camisa-estampada" />
+				<div>Empty</div>
 			))}
 		</>
 	);
