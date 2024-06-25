@@ -1,24 +1,33 @@
 "use client";
-import { useProduct } from "../context/productContext";
 
-export default function Quantity({ title }: { title?: string }) {
-	const { item, handleProduto } = useProduct();
+import { useEffect, useState } from "react";
 
-	function setQuantity(n: number) {
-		var _item = { ...item };
-		_item.quantity = n;
-		handleProduto(_item);
-	}
+export default function Quantity({ title, initialValue, onInputValueChange }: { title?: string; initialValue: string; onInputValueChange: (value: string) => void }) {
+	const [quantity, setQuantity] = useState<string>("1");
 
 	function decrease() {
-		if (item.quantity > 1) {
-			setQuantity(item.quantity - 1);
+		var q = parseInt(quantity);
+		if (q > 1) {
+			setQuantity((q - 1).toString());
 		}
 	}
 
 	function increase() {
-		setQuantity(item.quantity + 1);
+		setQuantity((parseInt(quantity) + 1).toString());
 	}
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const value = e.currentTarget.value;
+		setQuantity(value);
+	};
+
+	useEffect(() => {
+		console.log("quantity changed");
+		onInputValueChange(quantity);
+		if (initialValue) {
+			setQuantity(initialValue);
+		}
+	}, [quantity]);
 
 	return (
 		<div className="flex items-center gap-3">
@@ -27,7 +36,7 @@ export default function Quantity({ title }: { title?: string }) {
 				<button className="p-1 flex items-center justify-center w-6 h-6 rounded-full bg-slate-200 text-black text-2xl hover:bg-white" onClick={() => decrease()}>
 					-
 				</button>
-				<input className="rounded-md h-6 w-16 text-xl text-black text-center" type="text" value={item.quantity} />
+				<input className="rounded-md h-6 w-16 text-xl text-black text-center" type="text" value={quantity} onChange={handleChange} />
 				<button className="flex items-center justify-center w-6 h-6 rounded-full bg-slate-200 text-black text-2xl hover:bg-white" onClick={() => increase()}>
 					+
 				</button>

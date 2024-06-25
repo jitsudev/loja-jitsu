@@ -1,23 +1,24 @@
 "use client";
-import { useProduct } from "../context/productContext";
+
 import { COLOR } from "../(util)/dimona";
+import { useEffect, useState } from "react";
 
-export default function Colors({ title }: { title?: string }) {
-	const { item, handleProduto } = useProduct();
+export default function Colors({ title, onInputValueChange }: { title?: string; onInputValueChange: (value: string) => void }) {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const value = e.currentTarget.value;
+		setSelected(value);
+		onInputValueChange(value);
+	};
 
-	function setColor(color: string) {
-		var newItem = { ...item };
-		newItem.color = color;
-		handleProduto(newItem);
-	}
+	const [selected, setSelected] = useState<string>("");
 
 	return (
 		<div className="flex gap-2 items-center">
 			{title != "" ? <h2>{title}</h2> : null}
 			{Object.keys(COLOR).map((k, i) => (
-				<input type="radio" key={i} name="color" className={`cor ${COLOR[k]} rounded`} onClick={() => setColor(k)} />
+				<input type="radio" key={i} name="color" value={k} className={`cor ${COLOR[k]} rounded`} onChange={handleChange} />
 			))}
-			<div>{item.color} </div>
+			<div>{selected}</div>
 		</div>
 	);
 }

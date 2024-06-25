@@ -17,7 +17,7 @@ export default function Page() {
 							<div key={i} className="flex justify-between items-center gap-3 bg-gray-900">
 								<Image src="/mockup.png" width={80} height={80} alt={item.title} className="rounded" />
 								<div>{item.title}</div>
-								<Quantity />
+								<Quantity initialValue={item.quantity.toString()} onInputValueChange={() => null} />
 								<div>{item.value}</div>
 								<button onClick={() => removeItem(item.id)} className="flex justify-center items-center rounded-full bg-red-700 p-2 mr-10">
 									<Trash2 size={14} />

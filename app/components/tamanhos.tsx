@@ -1,5 +1,5 @@
 "use client";
-import { useProduct } from "../context/productContext";
+
 import { SIZE } from "../(util)/dimona";
 
 type sizeType = {
@@ -8,12 +8,11 @@ type sizeType = {
 	c: number;
 };
 
-export default function Tamanho() {
-	const { item, handleProduto } = useProduct();
-
-	function setSize(size: string) {
-		handleProduto({ ...item, size });
-	}
+export default function Tamanho({ onInputValueChange }: { onInputValueChange: (value: string) => void }) {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const value = e.currentTarget.value;
+		onInputValueChange(value);
+	};
 
 	return (
 		<div className="flex flex-col gap-2">
@@ -21,7 +20,7 @@ export default function Tamanho() {
 				Tamanho:
 				{Object.keys(SIZE).map((v, i) => (
 					<div key={i} className="flex gap-1">
-						<input type="radio" name="size" value={v} onClick={() => setSize(v)} />
+						<input type="radio" name="size" value={v} onChange={handleChange} />
 						{v}
 					</div>
 				))}
